@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+   <Feature Id="feature_" Title="!(loc.ProductName)" Level=1">
+      <Product Id="*" Name="!(loc.ProductName)" Language="1033" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="e8d1220f-e31a-41c8-9289-b83b77e4b8e2" Codepage="65001">
+         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Manufacturer="$(var.Manufacturer)" Description="!(loc.Description)" />
+
+         <ComponentGroupRef Id="cmpGroup_" />
+         <ComponentGroupRef Id="cmpGroup_Controllers" />
+         <ComponentGroupRef Id="cmpGroup_Controllers_AIS_HQLib" />
+         <ComponentGroupRef Id="cmpGroup_de" />
+         <ComponentGroupRef Id="cmpGroup_en" />
+         <ComponentGroupRef Id="cmpGroup_Equipments" />
+         <ComponentGroupRef Id="cmpGroup_Equipments_Tektronix" />
+         <ComponentGroupRef Id="cmpGroup_Equipments_Tektronix_TDS_3045B" />
+         <ComponentGroupRef Id="cmpGroup_es" />
+         <ComponentGroupRef Id="cmpGroup_fr" />
+         <ComponentGroupRef Id="cmpGroup_it" />
+         <ComponentGroupRef Id="cmpGroup_nl" />
+         <ComponentGroupRef Id="cmpGroup_tr" />
+      </Product>
+   </Feature>
+   <Fragment >
+      <Directory Id="INSTALLFOLDER" Name="$(var.InstallFolder)">
+         <Directory Id="dir_Controllers" Name="Controllers">
+            <Directory Id="dir_Controllers_AIS_HQLib" Name="AIS_HQLib" />
+         </Directory>
+         <Directory Id="dir_de" Name="de" />
+         <Directory Id="dir_en" Name="en" />
+         <Directory Id="dir_Equipments" Name="Equipments">
+            <Directory Id="dir_Equipments_Tektronix" Name="Tektronix">
+               <Directory Id="dir_Equipments_Tektronix_TDS_3045B" Name="TDS_3045B" />
+            </Directory>
+         </Directory>
+         <Directory Id="dir_es" Name="es" />
+         <Directory Id="dir_fr" Name="fr" />
+         <Directory Id="dir_it" Name="it" />
+         <Directory Id="dir_nl" Name="nl" />
+         <Directory Id="dir_tr" Name="tr" />
+      </Directory>
+   </Fragment>
+   <Fragment >
+      <ComponentGroup Id="cmpGroup_" Directory="INSTALLFOLDER">
+         <Component Id="cmp_Actions.dll">
+            <File Id="fil_Actions.dll" Source="$(var.AISProjectDirectory)Actions.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_AIS.exe">
+            <File Id="fil_AIS.exe" Source="$(var.AISProjectDirectory)AIS.exe" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_AIS.exe.config">
+            <File Id="fil_AIS.exe.config" Source="$(var.AISProjectDirectory)AIS.exe.config" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Cockpits.dll">
+            <File Id="fil_Cockpits.dll" Source="$(var.AISProjectDirectory)Cockpits.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Common.dll">
+            <File Id="fil_Common.dll" Source="$(var.AISProjectDirectory)Common.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Data.dll">
+            <File Id="fil_Data.dll" Source="$(var.AISProjectDirectory)Data.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Drivers.dll">
+            <File Id="fil_Drivers.dll" Source="$(var.AISProjectDirectory)Drivers.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_EntityFramework.dll">
+            <File Id="fil_EntityFramework.dll" Source="$(var.AISProjectDirectory)EntityFramework.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_EntityFramework.SqlServer.dll">
+            <File Id="fil_EntityFramework.SqlServer.dll" Source="$(var.AISProjectDirectory)EntityFramework.SqlServer.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_EntityFramework.SqlServer.xml">
+            <File Id="fil_EntityFramework.SqlServer.xml" Source="$(var.AISProjectDirectory)EntityFramework.SqlServer.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_EntityFramework.xml">
+            <File Id="fil_EntityFramework.xml" Source="$(var.AISProjectDirectory)EntityFramework.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_GUI.Controls.dll">
+            <File Id="fil_GUI.Controls.dll" Source="$(var.AISProjectDirectory)GUI.Controls.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_GUI.Dialogs.dll">
+            <File Id="fil_GUI.Dialogs.dll" Source="$(var.AISProjectDirectory)GUI.Dialogs.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_GUI.Startup.dll">
+            <File Id="fil_GUI.Startup.dll" Source="$(var.AISProjectDirectory)GUI.Startup.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Localization.dll">
+            <File Id="fil_Localization.dll" Source="$(var.AISProjectDirectory)Localization.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_NationalInstruments.Common.dll">
+            <File Id="fil_NationalInstruments.Common.dll" Source="$(var.AISProjectDirectory)NationalInstruments.Common.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_NationalInstruments.VisaNS.dll">
+            <File Id="fil_NationalInstruments.VisaNS.dll" Source="$(var.AISProjectDirectory)NationalInstruments.VisaNS.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_NPlot.dll">
+            <File Id="fil_NPlot.dll" Source="$(var.AISProjectDirectory)NPlot.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_OctaveWrapper.dll">
+            <File Id="fil_OctaveWrapper.dll" Source="$(var.AISProjectDirectory)OctaveWrapper.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Reports.dll">
+            <File Id="fil_Reports.dll" Source="$(var.AISProjectDirectory)Reports.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Scripts.dll">
+            <File Id="fil_Scripts.dll" Source="$(var.AISProjectDirectory)Scripts.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Chart.dll">
+            <File Id="fil_Telerik.Windows.Controls.Chart.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Chart.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Chart.xml">
+            <File Id="fil_Telerik.Windows.Controls.Chart.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Chart.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Data.dll">
+            <File Id="fil_Telerik.Windows.Controls.Data.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Data.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Data.xml">
+            <File Id="fil_Telerik.Windows.Controls.Data.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Data.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.DataVisualization.dll">
+            <File Id="fil_Telerik.Windows.Controls.DataVisualization.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.DataVisualization.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.DataVisualization.xml">
+            <File Id="fil_Telerik.Windows.Controls.DataVisualization.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.DataVisualization.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.dll">
+            <File Id="fil_Telerik.Windows.Controls.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Expressions.dll">
+            <File Id="fil_Telerik.Windows.Controls.Expressions.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Expressions.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Expressions.xml">
+            <File Id="fil_Telerik.Windows.Controls.Expressions.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Expressions.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.FixedDocumentViewers.dll">
+            <File Id="fil_Telerik.Windows.Controls.FixedDocumentViewers.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.FixedDocumentViewers.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.FixedDocumentViewers.xml">
+            <File Id="fil_Telerik.Windows.Controls.FixedDocumentViewers.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.FixedDocumentViewers.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.FixedDocumentViewersUI.dll">
+            <File Id="fil_Telerik.Windows.Controls.FixedDocumentViewersUI.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.FixedDocumentViewersUI.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.FixedDocumentViewersUI.xml">
+            <File Id="fil_Telerik.Windows.Controls.FixedDocumentViewersUI.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.FixedDocumentViewersUI.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.GridView.dll">
+            <File Id="fil_Telerik.Windows.Controls.GridView.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.GridView.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.GridView.xml">
+            <File Id="fil_Telerik.Windows.Controls.GridView.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.GridView.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.ImageEditor.dll">
+            <File Id="fil_Telerik.Windows.Controls.ImageEditor.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.ImageEditor.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.ImageEditor.xml">
+            <File Id="fil_Telerik.Windows.Controls.ImageEditor.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.ImageEditor.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Input.dll">
+            <File Id="fil_Telerik.Windows.Controls.Input.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Input.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Input.xml">
+            <File Id="fil_Telerik.Windows.Controls.Input.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Input.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Navigation.dll">
+            <File Id="fil_Telerik.Windows.Controls.Navigation.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Navigation.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.Navigation.xml">
+            <File Id="fil_Telerik.Windows.Controls.Navigation.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.Navigation.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.RibbonView.dll">
+            <File Id="fil_Telerik.Windows.Controls.RibbonView.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.RibbonView.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.RibbonView.xml">
+            <File Id="fil_Telerik.Windows.Controls.RibbonView.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.RibbonView.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.RichTextBoxUI.dll">
+            <File Id="fil_Telerik.Windows.Controls.RichTextBoxUI.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.RichTextBoxUI.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.RichTextBoxUI.xml">
+            <File Id="fil_Telerik.Windows.Controls.RichTextBoxUI.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.RichTextBoxUI.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Controls.xml">
+            <File Id="fil_Telerik.Windows.Controls.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Controls.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Data.dll">
+            <File Id="fil_Telerik.Windows.Data.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Data.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Data.xml">
+            <File Id="fil_Telerik.Windows.Data.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Data.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Diagrams.Core.dll">
+            <File Id="fil_Telerik.Windows.Diagrams.Core.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Diagrams.Core.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Diagrams.Core.xml">
+            <File Id="fil_Telerik.Windows.Diagrams.Core.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Diagrams.Core.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Core.dll">
+            <File Id="fil_Telerik.Windows.Documents.Core.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Core.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Core.xml">
+            <File Id="fil_Telerik.Windows.Documents.Core.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Core.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.dll">
+            <File Id="fil_Telerik.Windows.Documents.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Fixed.dll">
+            <File Id="fil_Telerik.Windows.Documents.Fixed.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Fixed.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Fixed.xml">
+            <File Id="fil_Telerik.Windows.Documents.Fixed.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Fixed.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Flow.dll">
+            <File Id="fil_Telerik.Windows.Documents.Flow.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Flow.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Flow.xml">
+            <File Id="fil_Telerik.Windows.Documents.Flow.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Flow.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Html.dll">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Html.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Html.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Html.xml">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Html.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Html.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.xml">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Pdf.dll">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Pdf.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Pdf.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Pdf.xml">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Pdf.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Pdf.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Rtf.dll">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Rtf.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Rtf.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Rtf.xml">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Rtf.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Rtf.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Xaml.dll">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Xaml.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Xaml.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.FormatProviders.Xaml.xml">
+            <File Id="fil_Telerik.Windows.Documents.FormatProviders.Xaml.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.FormatProviders.Xaml.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.dll">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.Spreadsheet.xml">
+            <File Id="fil_Telerik.Windows.Documents.Spreadsheet.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.Spreadsheet.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Documents.xml">
+            <File Id="fil_Telerik.Windows.Documents.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Documents.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Maths.dll">
+            <File Id="fil_Telerik.Windows.Maths.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Maths.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Maths.xml">
+            <File Id="fil_Telerik.Windows.Maths.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Maths.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Zip.dll">
+            <File Id="fil_Telerik.Windows.Zip.dll" Source="$(var.AISProjectDirectory)Telerik.Windows.Zip.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Telerik.Windows.Zip.xml">
+            <File Id="fil_Telerik.Windows.Zip.xml" Source="$(var.AISProjectDirectory)Telerik.Windows.Zip.xml" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_Controllers_AIS_HQLib" Directory="dir_Controllers_AIS_HQLib">
+         <Component Id="cmp_Controllers_AIS_HQLib_AIS_HQlib.dll">
+            <File Id="fil_Controllers_AIS_HQLib_AIS_HQlib.dll" Source="$(var.AISProjectDirectory)Controllers\AIS\HQLib\AIS\HQlib.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Controllers_AIS_HQLib_python27.dll">
+            <File Id="fil_Controllers_AIS_HQLib_python27.dll" Source="$(var.AISProjectDirectory)Controllers\AIS\HQLib\python27.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Controllers_AIS_HQLib_python27.zip">
+            <File Id="fil_Controllers_AIS_HQLib_python27.zip" Source="$(var.AISProjectDirectory)Controllers\AIS\HQLib\python27.zip" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Controllers_AIS_HQLib__ctypes.pyd">
+            <File Id="fil_Controllers_AIS_HQLib__ctypes.pyd" Source="$(var.AISProjectDirectory)Controllers\AIS\HQLib\\ctypes.pyd" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Controllers_AIS_HQLib__socket.pyd">
+            <File Id="fil_Controllers_AIS_HQLib__socket.pyd" Source="$(var.AISProjectDirectory)Controllers\AIS\HQLib\\socket.pyd" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_de" Directory="dir_de">
+         <Component Id="cmp_de_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_de_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)de\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_en" Directory="dir_en">
+         <Component Id="cmp_en_Localization.resources.dll">
+            <File Id="fil_en_Localization.resources.dll" Source="$(var.AISProjectDirectory)en\Localization.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_Equipments_Tektronix_TDS_3045B" Directory="dir_Equipments_Tektronix_TDS_3045B">
+         <Component Id="cmp_Equipments_Tektronix_TDS_3045B_NationalInstruments.Common.dll">
+            <File Id="fil_Equipments_Tektronix_TDS_3045B_NationalInstruments.Common.dll" Source="$(var.AISProjectDirectory)Equipments\Tektronix\TDS\3045B\NationalInstruments.Common.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Equipments_Tektronix_TDS_3045B_NationalInstruments.VisaNS.dll">
+            <File Id="fil_Equipments_Tektronix_TDS_3045B_NationalInstruments.VisaNS.dll" Source="$(var.AISProjectDirectory)Equipments\Tektronix\TDS\3045B\NationalInstruments.VisaNS.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+         <Component Id="cmp_Equipments_Tektronix_TDS_3045B_visa32.dll">
+            <File Id="fil_Equipments_Tektronix_TDS_3045B_visa32.dll" Source="$(var.AISProjectDirectory)Equipments\Tektronix\TDS\3045B\visa32.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_es" Directory="dir_es">
+         <Component Id="cmp_es_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_es_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)es\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_fr" Directory="dir_fr">
+         <Component Id="cmp_fr_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_fr_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)fr\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_it" Directory="dir_it">
+         <Component Id="cmp_it_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_it_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)it\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_nl" Directory="dir_nl">
+         <Component Id="cmp_nl_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_nl_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)nl\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+      <ComponentGroup Id="cmpGroup_tr" Directory="dir_tr">
+         <Component Id="cmp_tr_Telerik.Windows.Controls.resources.dll">
+            <File Id="fil_tr_Telerik.Windows.Controls.resources.dll" Source="$(var.AISProjectDirectory)tr\Telerik.Windows.Controls.resources.dll" KeyPath="yes" Checksum="yes" />
+         </Component>
+      </ComponentGroup>
+   </Fragment>
+</Wix>
