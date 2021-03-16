@@ -1,2 +1,2 @@
 # WiXInstallerHelper
-A helper to simplify the creation of the file for the setup.exe
+A helper to simplify the creation of a setup.exe or msi file
